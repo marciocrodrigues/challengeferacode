@@ -2,7 +2,8 @@ import {
   authRequest,
   authSuccess,
   authFailure,
-  registerRequest
+  registerRequest,
+  appSignOut,
 } from '../const';
 
 export function signInRequest(email, password) {
@@ -29,5 +30,11 @@ export function signUpRequest(name, email, password) {
 export function signFailure() {
   return {
     type: authFailure,
+  };
+}
+
+export function signOut() {
+  return {
+    type: appSignOut,
   };
 }

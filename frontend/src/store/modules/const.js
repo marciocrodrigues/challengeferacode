@@ -15,3 +15,6 @@ export const updateFailure = 'UPDATE_PROFILE_FAILURE';
 export const imageRequest = 'IMAGE_REQUEST';
 export const imageSuccess = 'IMAGE_SUCCESS';
 export const imageFailure = 'IMAGE_FAILURE';
+
+//constante para sair da aplicação
+export const appSignOut = 'SIGN_OUT';

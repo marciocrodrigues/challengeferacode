@@ -2,6 +2,27 @@ import styled from 'styled-components';
 import PerfectScrollbar from 'react-perfect-scrollbar';
 import { darken } from 'polished';
 
+export const ButtonAlterImage = styled.button`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 200px;
+  margin: 5px 0 0;
+  height: 44px;
+  background: #7E310D;
+  font-weight: bold;
+  color: #fff;
+  border: 0;
+  border-radius: 4px;
+  font-size: 16px;
+  transition: background 0.2s;
+
+  &:hover {
+    /** darken escurere a cor utilizando porcentagem */
+    background: ${darken(0.03, '#7E310D')};
+  }
+`;
+
 export const Container = styled.div`
   width: 100%;
   height: 100%;

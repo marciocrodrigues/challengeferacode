@@ -2,7 +2,8 @@ import produce from 'immer';
 import {
   authSuccess,
   updateSuccess,
-  imageSuccess
+  imageSuccess,
+  appSignOut
 } from '../const';
 
 
@@ -19,11 +20,15 @@ export default function user(state = INITIAL_STATE, action) {
     case updateSuccess:
       return produce(state, draft => {
         draft.profile = action.payload.profile;
-      })
+      });
     case imageSuccess:
       return produce(state, draft => {
         draft.profile.fileCover = action.payload.fileCover;
-      })
+      });
+    case appSignOut:
+      return produce(state, draft => {
+        draft.profile = null;
+      });
     default:
       return state;
   }

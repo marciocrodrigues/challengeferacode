@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Input from '../../components/Input';
 import { validateEmail } from '../../utils/validates';
 
+import { signOut } from '../../store/modules/auth/actions';
 import { updateProfileRequest } from '../../store/modules/user/actions';
 
 import PerfilInput from '../../components/PerfilInput';
@@ -94,6 +95,10 @@ function Profile() {
     return true;
   }
 
+  function handleSignOut() {
+    dispatch(signOut());
+  }
+
   return (
     <Container>
       <form onSubmit={handleSubmit}>
@@ -144,7 +149,10 @@ function Profile() {
         <button type="submit">Atualizar perfil</button>
       </form>
 
-      <button type="button">
+      <button
+        type="button"
+        onClick={handleSignOut}
+      >
         Sair sistema
       </button>
     </Container>

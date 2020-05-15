@@ -1,7 +1,11 @@
 import { takeLatest, call, put, all } from 'redux-saga/effects';
 import { toast } from 'react-toastify';
 import { signInSuccess, signFailure } from './actions';
-import { authRequest, registerRequest } from '../const';
+import {
+  authRequest,
+  registerRequest,
+  appSignOut
+} from '../const';
 import history from '../../../services/history';
 import api from '../../../services/api';
 
@@ -59,9 +63,14 @@ export function setToken({ payload }) {
   }
 }
 
+export function signOut() {
+  history.push('/');
+}
+
 export default all([
   // action do persist
   takeLatest('persist/REHYDRATE', setToken),
   takeLatest(authRequest, signIn),
-  takeLatest(registerRequest, signUp)
+  takeLatest(registerRequest, signUp),
+  takeLatest(appSignOut, signOut),
 ]);

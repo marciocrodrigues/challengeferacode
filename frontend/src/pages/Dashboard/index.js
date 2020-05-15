@@ -3,7 +3,12 @@ import { useSelector } from 'react-redux';
 
 import api from '../../services/api';
 
-import { Container, Scroll, Content } from './styles';
+import {
+  Container,
+  Scroll,
+  Content,
+  ButtonAlterImage
+} from './styles';
 
 import Modal from '../../components/Modal';
 import CoverInput from '../../components/CoverInput';
@@ -45,7 +50,7 @@ function Dashboard() {
   return (
     <Container cover={fileCover ? fileCover : "https://picsum.photos/id/237/200/300"}>
 
-      <button type="button" onClick={handleShowModal}>Alterar Imagem de fundo</button>
+      <ButtonAlterImage type="button" onClick={handleShowModal}>Alterar Imagem de fundo</ButtonAlterImage>
 
       <Modal show={showModal}>
           <CoverInput profile={profile}/>
